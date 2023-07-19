@@ -10,6 +10,16 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
   }
 }
 
+const getUsers = async (): Promise<IUser[] | null> => {
+  const users = await User.find({})
+  if (users) {
+    return users
+  } else {
+    return null
+  }
+}
+
 export default {
   createUser,
+  getUsers,
 }
